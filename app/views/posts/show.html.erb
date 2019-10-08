@@ -1,0 +1,22 @@
+
+<div class="card mt-4">
+    <div class="card-header">
+        <%= @post.title%>
+    </div>
+    <div class="card-body">
+        <p class="card-text"><%= @post.body%></p>
+    
+        <%= link_to 'Edit', edit_post_path(@post), {:class => "btn btn-sm btn-outline-info"} %>
+        <%= link_to 'Delete',
+            post_path(@post),
+            method: :delete,
+            data: { confirm: "Are you sure?" },
+            :class => "btn btn-sm btn-outline-danger" %>
+    </div>
+</div>
+
+<h4>Comments</h4>
+<div class="well mt-4">
+    <p class="card-text"><%= @post.body%></p>
+</div>
+
